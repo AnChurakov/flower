@@ -1,0 +1,14 @@
+﻿@model IEnumerable<Flower.Models.Stock>
+@{
+    ViewBag.Title = "Склады";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<a href="~/Stock/AddStock">Добавить новый склад</a>
+<br /><br />
+
+@foreach(var stock in Model)
+{
+    <a href="~/Stock/SelectStock/@stock.Id">@stock.Name</a><br />
+}

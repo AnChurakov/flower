@@ -1,0 +1,18 @@
+﻿@model Flower.Models.Stock
+@{
+    ViewBag.Title = "Добавление склада";
+}
+
+<h2>@ViewBag.Title</h2>
+
+
+@using (Html.BeginForm("AddNewStock", "Stock", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary("", new { @class = "text-danger" })
+    @Html.LabelFor(m => m.Name, new { @class = "control-label" })
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+       <br />
+    <input type="submit" class="btn btn-success" value="Добавить" />
+}
+
